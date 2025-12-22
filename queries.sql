@@ -87,7 +87,7 @@ WHERE NOT EXISTS (
     WHERE b.vehicle_id = v.vehicle_id
 )
 ORDER BY v.vehicle_id;
---3
+--3.
 SELECT 
     vehicle_id,
     name,
