@@ -41,7 +41,7 @@ Stores booking records.
 
 ---
 
-## 🧠 SQL Concepts Covered
+##  SQL Concepts Covered
 - INNER JOIN
 - WHERE clause
 - NOT EXISTS
