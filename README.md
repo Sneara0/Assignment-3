@@ -75,6 +75,8 @@ This project demonstrates how relational database tables can be queried efficien
 using SQL to extract meaningful insights for a vehicle rental system.
 
 
+## query and answer
+
 CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
