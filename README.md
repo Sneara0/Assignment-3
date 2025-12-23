@@ -85,6 +85,8 @@ CREATE TABLE users (
         CHECK (role IN ('Admin', 'Customer'))
 );
 
+
+
 CREATE TABLE vehicles (
     vehicle_id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -96,6 +98,7 @@ CREATE TABLE vehicles (
     status VARCHAR(20) NOT NULL
         CHECK (status IN ('available', 'rented', 'maintenance'))
 );
+
 
 
 CREATE TABLE bookings (
@@ -112,7 +115,6 @@ CREATE TABLE bookings (
 
     total_cost INT NOT NULL
 );
-
 
 INSERT INTO users (user_id, name, email, phone, role, password)
 VALUES
@@ -163,7 +165,8 @@ WHERE NOT EXISTS (
     WHERE b.vehicle_id = v.vehicle_id
 )
 ORDER BY v.vehicle_id;
---3
+--3.
+
 SELECT 
     vehicle_id,
     name,
@@ -178,6 +181,7 @@ WHERE type = 'car'
 ORDER BY vehicle_id;
 
 --4.
+
 SELECT 
     v.name AS vehicle_name,
     COUNT(b.booking_id) AS total_bookings
@@ -186,4 +190,8 @@ INNER JOIN vehicles v
     ON b.vehicle_id = v.vehicle_id
 GROUP BY v.name
 HAVING COUNT(b.booking_id) > 2;
+
+
+
+
 
